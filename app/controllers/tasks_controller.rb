@@ -7,7 +7,19 @@ class TasksController < ApplicationController
     render status: :ok, json: { tasks: tasks }
   end
 
-  def show
-    @task = Task.find_by(identifier_name: params[:identifier_name])
+  def create
+    task = Task.new(task_params)
+    task.save!
+    respond_with_success(t("successfully_created"))
   end
+
+  private
+
+    def task_params
+      params.require(:task).permit(:title)
+    end
+
+    def show
+      @task = Task.find_by(identifier_name: params[:identifier_name])
+    end
 end
