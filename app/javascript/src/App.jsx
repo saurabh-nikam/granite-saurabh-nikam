@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 
 import { registerIntercepts, setAuthHeaders } from "apis/axios";
 import { initializeLogger } from "common/logger";
+import Signup from "components/Authentication/Signup";
 import Dashboard from "components/Dashboard";
 import PageLoader from "components/PageLoader";
 import { CreateTask, ShowTask, EditTask } from "components/Tasks";
@@ -33,6 +34,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" render={() => <div>Home</div>} />
         <Route exact path="/about" render={() => <div>About</div>} />
+        <Route exact component={Signup} path="/signup" />
         <Route exact component={EditTask} path="/tasks/:slug/edit" />
         <Route exact component={ShowTask} path="/tasks/:slug/show" />
         <Route exact component={CreateTask} path="/tasks/create" />
