@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Task < ApplicationRecord
+  belongs_to :task_owner, foreign_key: "task_owner_id", class_name: "User"
   MAX_TITLE_LENGTH = 100
   validates :title, presence: true, length: { maximum: MAX_TITLE_LENGTH }
   validates :slug, uniqueness: true
