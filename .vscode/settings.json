@@ -20,6 +20,7 @@
   "ruby.format": "rubocop",
   "cSpell.words": [
     "rubocop",
-    "tailwindcss"
+    "tailwindcss",
+    "Todos"
   ],
 }

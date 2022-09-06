@@ -24,14 +24,14 @@ class User < ApplicationRecord
 
   private
 
+    def to_lowercase
+      email.downcase!
+    end
+
     def assign_tasks_to_task_owners
       tasks_whose_owner_is_not_current_user = assigned_tasks.select { |task| task.task_owner_id != id }
       tasks_whose_owner_is_not_current_user.each do |task|
       task.update(assigned_user_id: task.task_owner_id)
     end
-
-      def to_lowercase
-        email.downcase!
-      end
   end
 end
