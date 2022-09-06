@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UserController < ApplicationController
+class UsersController < ApplicationController
   skip_before_action :authenticate_user_using_x_auth_token, only: :create
   def index
     users = User.select(:id, :name)
