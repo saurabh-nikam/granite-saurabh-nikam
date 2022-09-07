@@ -29,6 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
+
 en:
   authorization:
     denied: "Access denied. You are not authorized to perform this action."
@@ -41,3 +42,4 @@ en:
   task:
     slug:
       immutable: "is immutable!"
+    not_found: "Couldn't find Task"
