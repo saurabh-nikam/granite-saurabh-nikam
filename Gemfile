@@ -59,3 +59,8 @@ gem "react-rails"
 gem "sidekiq"
 gem "simplecov", require: false, group: :test
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# For periodic sidekiq jobs
+gem "sidekiq-cron"
+
+# For opening mails in development env
+gem "letter_opener", group: :development
