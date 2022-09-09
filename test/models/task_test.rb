@@ -32,12 +32,6 @@ class TaskTest < ActiveSupport::TestCase
     assert_not @task.valid?
   end
 
-  def test_exception_raised
-    assert_raises ActiveRecord::RecordNotFound do
-      Task.find(SecureRandom.uuid)
-    end
-  end
-
   def test_task_count_increases_on_saving
     assert_difference ["Task.count"], 1 do
       create(:task)
