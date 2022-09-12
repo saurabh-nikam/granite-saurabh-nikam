@@ -9,10 +9,9 @@ Rails.application.routes.draw do
         end
       end
     end
-    resources :tasks, except: %i[new edit], param: :slug
     resources :users, only: %i[index create]
     resource :session, only: [:create, :destroy]
-    resources :comments, only: :create
+    resource :comments, only: :create
     resource :preference, only: %i[show update] do
       patch :mail, on: :collection
     end
